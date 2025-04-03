@@ -20,25 +20,25 @@ jobs:
               with:
                 context: ./client
                 push: true
-                tags: n1bnft/client:latest
+                tags: ${{secrets.DH1USER}}/client:latest
 
             - name: Build and push api image
               uses: docker/build-push-action@v6
               with:
                 context: ./server
                 push: true
-                tags: n1bnft/server:latest
+                tags: ${{secrets.DH1USER}}/server:latest
 
             - name: Build and push worker image
               uses: docker/build-push-action@v6
               with:
                 context: ./worker
                 push: true
-                tags: n1bnft/worker:latest
+                tags: ${{secrets.DH1USER}}/worker:latest
 
             - name: Build and push front nginx image
               uses: docker/build-push-action@v6
               with:
                 context: ./nginx
                 push: true
-                tags: n1bnft/nginx:latest
+                tags: ${{Secrets.DH1USER}}/nginx:latest
